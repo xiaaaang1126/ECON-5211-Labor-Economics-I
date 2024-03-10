@@ -1,0 +1,26 @@
+---
+title: "Labor Economics HW1"
+output: pdf_document
+date: "2024-03-10"
+---
+
+The location of this .rmd file is: /homework/homework1//R_code
+
+Here is the package installation command:
+
+```{r}
+# Q1.2.3 install package (unmark if need to be installed)
+# install.packages("data.table") 
+# install.packages("ggplot2")
+# install.packages("fixest")
+# install.packages("knitr")
+# install.packages("dplyr")
+```
+
+Here is the "Hello world!" display:
+
+```{r}
+# Q1.2.4 helloworld
+print("Hello world!")
+```
+
