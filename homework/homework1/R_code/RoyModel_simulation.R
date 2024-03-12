@@ -13,6 +13,7 @@ n <- 1000000
 # 2. Simulate the epsilon_0 and epsilon_1
 set.seed(123)
 reps <- 1000000
+
 par.est.DT <- data.table(matrix(0, reps, 6))
 epsilon_0 <- rnorm(n, mean = 0, sd = sigma_0**2)
 epsilon_1 <- rnorm(n, mean = 0, sd = sigma_1**2)
@@ -26,7 +27,9 @@ par.est.DT[, 3] <- w_0
 par.est.DT[, 4] <- w_1
 
 # 4. Generate the column I that take binary value.
-par.est.DT[, 5] <- ifelse(par.est.DT[, 2] > par.est.DT[, 1], 1, 0)
+## If w_1 is greater 
+par.est.DT[, 5] <- ifelse(par.est.DT[, 4] > par.est.DT[, 3], 1, 0)
+# par.est.DTdf[, I := w_1 > w_0 + C]
 
 # 5. Calculate E[w0|I], E[w1|I], Q0, Q1 from data
 E_epsilon0_D1 <- par.est.DT[V5 == 1, mean(V1)]
@@ -45,8 +48,18 @@ mill <- function(x) {
 RHS_1 <- mu_0 + (sigma_0*sigma_1/sigma_nu) * (sigma_01/(sigma_0*sigma_1) - sigma_0/sigma_1) * mill(Z)
 RHS_2 <- mu_1 + (sigma_0*sigma_1/sigma_nu) * (sigma_0/sigma_1 - sigma_01/(sigma_0*sigma_1)) * mill(Z)
 
+# comparison
 E_w0_D1
 E_w1_D1
 RHS_1
 RHS_2
 
+
+
+
+data.table(matrix(0, reps, 6))
+dt[, w_0 := epsilon_0 + mu_0]
+dt[, w_1 := epsilon_1 + mu_1]
+dt[, I := w_1 > w_0 + C]
+dt[I == 1, mean(w_0)]
+dt[I == 1, mean(w_1)]
