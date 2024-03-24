@@ -363,4 +363,99 @@ df_exp1 <- tibble(
             
             The propensity score is the selection probability conditional on observables; that is
 
-            \
+            \[
+                p(X) = P(D = 1 | X_1, X_2)
+            \]
+            
+            % Q3.2.4
+            \item {\bf Derive the propensity score analytically}
+            
+            Suppose that $X_1$ and $X_2$ are exogenous, and people choose to migrate to the host country if and only if their potential wage in the host country is higher than that in their home country. Suppose $\varepsilon_0$ and $\varepsilon_1$ are jointly normally distributed
+
+            \[
+                \begin{pmatrix}
+                    \varepsilon_0 \\
+                    \varepsilon_1
+                    \end{pmatrix}
+                    \sim \mathcal{N}
+                    \left(
+                    \begin{pmatrix}
+                        0 \\
+                        0
+                    \end{pmatrix},
+                    \begin{pmatrix}
+                        \sigma_0^2    & \sigma_{01}^2 \\
+                        \sigma_{01}^2 & \sigma_1^2
+                    \end{pmatrix}
+                    \right)
+            \]
+
+            Define $\nu \overset{\Delta}{=} \mu_1 - \mu_0$, then the propensity score is
+
+            \[ \begin{aligned}
+                p(X) &= P(D = 1 | X_1, X_2) \\
+                     &= P(\mu_1 - \mu_0 + \beta_2 X_2 + \varepsilon_1 - \varepsilon_0 > 0 | X_1, X_2) \\
+                     &= P(\nu > \mu_0 - \mu_1 - \beta_2 X_2 | X_1, X_2) \\
+                     &= 1 - P\left(\nu \leq \frac{\mu_0 - \mu_1 - \beta_2 X_2}{\sigma_{\nu}} | X_1, X_2\right) \\
+                     &= 1 - \Phi\left(\frac{\mu_0 - \mu_1 - \beta_2 X_2}{\sigma_{\nu}}\right)
+            \end{aligned} \]
+
+            This fact uses the fact that $X_1$ and $X_2$ are exogenous. Without this assumption, the analytical derivation of the propensity score will be very complicated.
+            
+            % Q3.2.5
+            \item {\bf Create a column in your simulated data for the estimated propensity score using the derived formula above.}
+            
+            \begin{lstlisting}[language=R]
+df_exp1 <- df_exp1 %>%
+    mutate(p1 = 1 - pnorm((mu0 - mu1 - b2 * x2) / sqrt(2)))
+            \end{lstlisting}
+            
+            % Q3.2.6
+            \item {\bf Use logit to estimate the propensity score.}
+            
+            \begin{lstlisting}[language=R]
+model_logit <- glm(d ~ x1 + x2, data = df_exp1, family = binomial)
+df_exp1 <- df_exp1 %>%
+    mutate(p2 = predict(model_logit, type = "response"))
+            \end{lstlisting}
+            
+            % Q3.2.7
+            \item {\bf What is the correlation coefficient of the above two types of propensity scores?}
+            
+            \begin{lstlisting}[language=R]
+cor(df_exp1$p1, df_exp1$p2)
+[1] 0.9997235
+            \end{lstlisting}    
+            
+            % Q3.2.8
+            \item {\bf Use both types of propensity score to conduct IPW estimates.}
+            
+            \begin{lstlisting}[language=R]
+df_exp1 <- df_exp1 %>%
+    mutate(
+        ipw1 = ifelse(d == 1, 1 / p1, 1 / (1 - p1)),
+        ipw2 = ifelse(d == 1, 1 / p2, 1 / (1 - p2)))
+lm(w ~ d, data = df_exp1, weights = df_exp1$ipw1)
+lm(w ~ d, data = df_exp1, weights = df_exp1$ipw2)
+            \end{lstlisting} 
+            
+            % Q3.2.9
+            \item {\bf People regress $w_i$ on $X_i$ . Can you recover the parameters?}
+            
+            Suppose the treatment assignment mechanism is not ignorable conditional on $X_1$ and $X_2$, as in Example 1. I cannot recover the parameters by regression.
+            
+            % Q3.2.10
+            \item {\bf Now estimate by adding “control variables.” Does that work?}
+            
+            It does not work. Since the treatment assignment mechanism is not ignorable conditional on the control variables, the standard regression strategy does not work. If we can observe $\varepsilon_0$ and $\varepsilon_1$, then we can recover the parameters.
+            
+        \end{enumerate}
+        
+
+
+
+
+
+
+
+\end{document}  
