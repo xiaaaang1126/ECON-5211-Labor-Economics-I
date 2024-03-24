@@ -6,6 +6,7 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{fancyvrb}
+\usepackage{fancyhdr}
 
 % useful package
 \usepackage[obeyspaces]{url}
@@ -20,18 +21,20 @@
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
 \lstdefinestyle{mystyle}{
-    backgroundcolor=\color{backcolour},   
-    commentstyle=\color{codegreen},
-    keywordstyle=\color{magenta},
-    numberstyle=\tiny\color{codegray},
-    stringstyle=\color{codepurple},
-    basicstyle=\ttfamily\footnotesize,
+    backgroundcolor = \color{backcolour},   
+    commentstyle = \color{codegray},
+    keywordstyle = \color{blue},
+    numberstyle = \tiny\color{codegray},
+    stringstyle = \color{codegreen},
+    basicstyle = \ttfamily\footnotesize,
     breakatwhitespace=false,         
     breaklines=true,    captionpos=b,                    
-    keepspaces=true, numbers=left,                    
-    numbersep=5pt, showspaces=false,                
-    showstringspaces=false, showtabs=false, tabsize=2}
+    keepspaces=true, numbers=left,
+    numbersep=10pt, showspaces=false,                
+    showstringspaces = true, showtabs = true, tabsize = 2}
 \lstset{style=mystyle}
+
+
 
 
 \parindent0in
@@ -42,7 +45,7 @@
 %% UPDATE MACRO DEFINITIONS %%
 \newcommand{\myname}{Xiang Jyun, Jhang}
 \newcommand{\assignment}{Homework 1}
-\newcommand{\duedate}{March 10, 2024}
+\newcommand{\duedate}{March 24, 2024}
 
 %% mathematical notation
 \newcommand{\ept}{\mathbb{E}}
@@ -67,123 +70,211 @@
     % Q1.1
     \subsection{Heuristic Identification}
     
-        
+        \begin{enumerate}
 
             % Q1.1.1
-            \subsubsection{\textit{“We don't have enough sample size to identify the causal effects of the problem.}}
+            \item{\textit{“We don't have enough sample size to identify the causal effects of the problem."}}
             
-                \subparagraph{
-                The statement is false in most cases. Since the identification is to find the parameters underlying the data generating process, sample size has nothing to do with it. However, if the sample size is very small, then the model might not be able to sucessfully identify the casual effect even if it is identifiable.}
+                The statement is false in most cases. Since the identification is to find the parameters underlying the data generating process, sample size has nothing to do with it. However, if the sample size is very small, then the model might not be able to sucessfully identify the casual effect even if it is identifiable.
             
             % Q1.1.2
-            \subsubsection{\textit{“We don't have a good identification strategy so I need to use a structural model.”}}
+            \item{\textit{“We don't have a good identification strategy so I need to use a structural model.”}}
             
-            $\quad\Rightarrow\ $ Not having a good identification strategy can be interpreted as "Have identification set but lack method to estimate it". In this case, turning to the structural model can be a good idea.
+                Not having a good identification strategy can be interpreted as "Have identification set but lack method to estimate it". In this case, turning to the structural model can be a good idea.
             
             % Q1.1.3
-            \subsubsection{\textit{“Because I have a structural model, I don't need to think about identification.”}}
+            \item{\textit{“Because I have a structural model, I don't need to think about identification.”}}
             
-            $\quad\Rightarrow\ $ The statement is false. When using structural model, identification is as crucial as reduced-form model since it helps us to understand the exact parameters underlying the data generating process
+                The statement is false. When using structural model, identification is as crucial as reduced-form model since it helps us to understand the exact parameters underlying the data generating process.
 
             % Q1.1.4
-            \subsubsection \textit{“Because I can use the maximum likelihood estimator, I can identify that.”}
+            \item{\textit{“Because I can use the maximum likelihood estimator, I can identify that.”}}
             
-            $\quad\Rightarrow\ $ The statement is false and it fails to distinguish the order between identification and estimation. Only after have a correct identification can we start to discuss estimation
+                The statement is false and it fails to distinguish the order between identification and estimation. Only after have a correct identification can we start to discuss estimation.
 
-        
+        \end{enumerate}
+
 
     % Q1.2
     \subsection{Identification of OLS}
 
-    Given the OLS regression model
+        Given the OLS regression model
 
-    \[
-        y_i  =\beta x_i + \epsilon_i
-    \]
+        \[
+            y_i  =\beta x_i + \epsilon_i
+        \]
 
-    suppose the identification set is not a singleton, that is
+        suppose the identification set is not a singleton, that is
 
-    \[
-        \beta x_i = \beta^* x_i, \quad\text{for all } x_i
-    \]
+        \[
+            \beta x_i = \beta^* x_i, \quad\text{for all } x_i
+        \]
 
-    hence $\beta = \beta^*$, so the identification set is a singleton and thus $\beta$ is identified
+        hence $\beta = \beta^*$ and we have a contradiction. So the identification set is a singleton and thus $\beta$ is identified.
 
 
     % Q1.3
     \subsection{Identification of a Factor Model}
 
+        \begin{enumerate}
     
+            % Q1.3.1
+            \item{\bf Show that $\rho$ is identified}
+                
+                We first consider the covariance between $y_{it}$ and $y_{it-1}$. Given that $\nu$, $\varepsilon$ and $\zeta$ are mutually independent, we have
+
+                \[ \begin{aligned}
+                    \cov(y_{it}, y_{it-1}) &= \cov(\nu_{it} + \varepsilon_{it}, \nu_{it-1} + \varepsilon_{it-1}) &\qquad& \\
+                                              &= \cov(\rho\nu_{it-1} + \zeta_{it} + \varepsilon_{it}, \nu_{it-1} + \varepsilon_{it-1}) && \\
+                                              &= \rho\sigma_\nu^2 && (\text{1})
+                \end{aligned} \]
+
+                Following the same style, now we turn to consider covariance between $y_{it}$ and $y_{it-2}$
+                
+                \[ \begin{aligned}
+                    \cov(y_{it}, y_{it-2}) &= \cov(\nu_{it} + \varepsilon_{it}, \nu_{it-2} + \varepsilon_{it-2}) &\qquad& \\
+                                              &= \cov(\rho\nu_{it-1} + \zeta_{it} + \varepsilon_{it}, \nu_{it-2} + \varepsilon_{it-2}) && \\
+                                              &= \cov(\rho^2\nu_{it-2} + \rho\zeta_{it-1} + \zeta_{it} + \varepsilon_{it}, \nu_{it-2} + \varepsilon_{it-2}) && \\
+                                              &= \rho^2\sigma_\nu^2
+                \end{aligned} \]
+                
+                As a consequence, $\rho$ is identified by 
+
+                \[
+                    \rho = \frac{\cov(y_{it}, y_{it-1})}{\cov(y_{it}, y_{it-2})}
+                \]
+
+            % Q1.3.2
+            \item{\bf Show that $\sigma_{\epsilon}^2$ is identified}
+            
+                Note that 
+
+                \[
+                    \var(y_{it}) = \var(\nu_{it} + \varepsilon_{it}) = \sigma_\nu^2 + \sigma_{\epsilon}^2 
+                \]
+                
+                Given we have identified $\rho$ and equation 1, we can identify $\sigma_{\epsilon}^2$ as well.
+
+            % Q1.3.3
+            \item{\bf Show that $\sigma_{\zeta}^2$ is identified}
+            
+                Note that
+                
+                \[
+                    \var(\nu_{it}) = \var(\rho\nu_{it-1} + \zeta_{it}) = \rho^2\sigma_\nu^2 + \sigma_\zeta^2
+                \]
+
+                Given we have shown both $\rho$ and $\sigma_\nu^2$ are identified, we can identify $\sigma_\zeta^2$ as well.
+
+            % Q1.3.4
+            \item{\bf How do we estimate these parameters? Write down an estimator}
+            
+                By analogy principle, we can construct the following estimators respectively
+
+                \[ \begin{aligned}
+                    \hat{\rho} &= \frac{\sum_{i=1}^{N} (y_{it} - \bar{y}_{t})(y_{it-2} - \bar{y}_{t-2})}{\sum_{i=1}^{N} (y_{it} - \bar{y}_{t})(y_{it-1} - \bar{y}_{t-1})} \\
+                    \hat{\sigma}^2_{\nu} &= \frac{1}{\hat{\rho}N} \sum_{i=1}^{N} (y_{it} - \bar{y}_{t})(y_{it-1} - \bar{y}_{t-1}) \\
+                    \hat{\sigma}^2_{\varepsilon} &= \frac{1}{N} \sum_{i=1}^{N} (y_{it} - \bar{y}_{t})^2 - \hat{\sigma}^2_{\nu} \\
+                    \hat{\sigma}^2_{\zeta} &= (1 - \hat{\rho}^2)\hat{\sigma}^2_{\nu}
+                \end{aligned} \]
         
-        % Q1.3.1
-        \subsubsection To show that \(\rho\) is identified, we consider the model equation for $y_{i,t}$:
-        \[ \begin{aligned}
-            y_{i,t} &= \nu_{i,t} + \epsilon_{i,t}  \\
-                    &= \rho \nu_{i,t-1} + \xi_{i,t} + \epsilon_{i,t}  \\
-                    &= \rho(y_{i,t-1} - \epsilon_{i,t-1}) + \xi_{i,t} + \epsilon_{i,t}  \\
-                    &= \rho y_{i,t-1} + \underbrace{\xi_{i,t} + \epsilon_{i,t} - \rho \epsilon_{i,t-1}}_{\text{idiosyncratics}}
-        \end{aligned} \]
-        Since we can observe $y_{i,t}$ and $y_{i,t-1}$, the model equation degenrate into the OLS example in question 1.2, so $\rho$ can be identified
-
-        % Q1.3.2
-        \subsubsection We first show that $\sigma_\xi^2$ is identified by considering the equation $\nu_{i,t} = \rho \nu_{i,t-1} + \xi_{i,t}$, since the process is stationary, we have
-        
-        \begin{equation}
-            \var(\nu_{i,t}) = \rho^2 \nu_{i,t-1} + \var(\xi_{i,t}) 
-            \quad\Leftrightarrow\quad
-            \var(\nu_{i,t}) = \sigma_\nu^2 = \frac{\sigma_\xi^2}{1-\rho^2}, \quad\text{for any } t 
-        \end{equation}
-
-        sicne we observe the data $y_{i,t}$, we can compute the covariance between $y_{i,t}$ and $y_{i,t-1}$
-
-        \[
-            \cov(y_{i,t}, y_{i,t-1}) = \cov(\nu_{i,t}+\xi_{i,t}, \nu_{i,t-1}+\xi_{i,t-1})  
-                                     \overset{\nu \perp \xi}{=} \sigma_\nu^2 
-                                     \overset{(1)}{=} \frac{\sigma_\xi^2}{1-\rho^2}
-        \]
-
-        given that $\rho$ can be identified in question 1, we can conclude that $\sigma_\xi^2$ can also be identified.
-        
-        % Q1.3.2
-        \subsubsection Next we show $\sigma_\epsilon^2$ is identified by considering the equation $y_{i,t} = \nu_{i,t} + \epsilon$, follow same procedure, we consider the variance of the terms
-        
-        \[ \begin{aligned}
-            \var(y_{i,t}) &= \sigma_{\nu}^{2} + \sigma_{\epsilon}^{2}  \\
-                          &\overset{(1)}{=} \frac{\sigma_\xi^2}{1-\rho^2} + \sigma_\epsilon^2
-        \end{aligned} \]
-
-        since $y_{i,t}$ is observed and we can compute $\var(y_{i,t})$, also we have shown that $\sigma_\xi^2$ and $\rho$ can be identified, we can conclude that $\sigma_\epsilon^2$ can be identified.
-
-        % Q1.3.4
-        \subsubsection hello
+        \end{enumerate}
 
     
     % Q1.4 
     \subsection{Simulation of MLE}
+
+        \begin{enumerate}
+    
+            % Q1.4.1
+            \item{\bf Write down the likelihood function}
+
+                Note that $y_i = \epsilon_i^1 + \epsilon_i^2$ is the addition of two normal distributions, which also follows the normal distribution with mean $0$ and variance $\sigma_1^2+\sigma_2^2$, therefore we can list the pdf of $y_i$
+
+                \[
+                    f(y_i; \sigma_1^2, \sigma_2^2) = \frac{1}{\sqrt{2\pi(\sigma_1^2 + \sigma_2^2)}} \exp(-\frac{y_i^2}{2(\sigma_1^2 + \sigma_2^2)}), \quad\text{where } y_i \in \mathcal{R}
+                \]
+
+                Given the identical and independent samples, we can form the likelihood function as
+
+                \[
+                    \mathcal{L}(\sigma_1^2, \sigma_2^2; y_1, y_2, \ldots, y_N) = \prod_{i=1}^{N} f(y_i; \sigma_1^2, \sigma_2^2)
+                \]
+
+                To simplify computation, we can take monotonic transformation on the likelihood function
+
+                \[
+                    \ell(\sigma_1^2, \sigma_2^2) = \sum_{i=1}^{N} \log f(y_i; \sigma_1^2, \sigma_2^2) = -\frac{N}{2} \log(2\pi) - \frac{N}{2} \log(\sigma_1^2 + \sigma_2^2) - \sum_{i=1}^{N}\frac{y_i^2}{2(\sigma_1^2 + \sigma_2^2)}
+                \]
+
+            % Q1.4.2
+            \item{\bf Let's draw just $N=2$, use \texttt{optim} function to get maximum likelihood estimates }
+            
+                \begin{lstlisting}[language=R]
+# Define the negative log-likelihood function
+negative_log_lik <- function(parameter) {
+    sigma_1 <- parameter[1]
+    sigma_2 <- parameter[2]
+    e1 <- rnorm(2, 0, sd = sigma_1)
+    e2 <- rnorm(2, 0, sd = sigma_2)
+    y <- e1 + e2
+    log(sigma_1^2 + sigma_2^2) + log(2 * pi)
+    + (1 / (2 * (sigma_1^2 + sigma_2^2))) * sum(y^2)
+}
+# Optimize the negative log-likelihood function
+result <- optim(c(2, 2), negative_log_lik, method = "L-BFGS-B")
+result$par
+                \end{lstlisting}
+                
+
+            % Q1.4.3
+            \item{\bf Now stare at the model, can one separately identify $\sigma_1^2$ from $\sigma_2^2$? Show that it is identified or it is not identified}
+
+                No. Since $\epsilon_i^1 \perp \epsilon_i^2$ and we can only observe $\epsilon_i^1 + \epsilon_i^2$, it's impossible to identify $\sigma_1^2$ or $\sigma_2^2$ individually given no further assumption is imposed.
+
+            % Q1.4.4
+            \item{\bf How about $\sigma_{1+2}$? Show that it is identified or it is not identified.}
+
+                We can identify $\sigma_1^2 + \sigma_2^2$, which is the variance of $Y_i$, by using sample variance as our estimator.
+
+            % Q1.4.5
+            \item{\bf Does the procedure in question 2 make sense?}
+
+                No since the $\sigma_1^2$ and $\sigma_2^2$ can not be separately identified, it didn't make sense to find MLE estimates.
+
+        \end{enumerate}    
 
 
 
 % question 2
 \section{Potential Outcome Framework}
 
+    % Q2.1
+    \subsection{Use the exact potential outcome notation in class to write out the model}
     
-
-        % Q2.1
-        \subsection f
         \[
             w_i = D_iY_i(1) + (1-D_i)Y_i(0)
         \]
-        
-        % Q2.2
-        \subsection f $Y_i(1)$ represents the outcome (wage) if individual $i$ choose to migrate; while $Y_i(0)$ represents the outcome if individual $i$ choose not to migrate
+    
+    % Q2.2
+    \subsection{What is $Y_i(0)$? What is $Y_i(1)$} 
+    
+        $Y_i(1)$ represents the wage if individual $i$ is observed to choose to migrate; while $Y_i(0)$ represents the outcome if individual $i$ is observed to choose not to migrate
+
         \[ \left\{ \begin{aligned} 
             Y_i(1) = w_{i,1} = \mu_{i,1} + \epsilon_{i,1} \\
             Y_i(0) = w_{i,0} = \mu_{i,0} + \epsilon_{i,0}
         \end{aligned} \right. \]
 
+    % Q2.3
+    \subsection{What is $D_i$?}
+    
+        $D_i \in \{0,1\}$ reflects on whether individual $i$ choose to migrate, and in Roy model, the criterion for individual to choose migration or not is
 
-        % Q2.3
-        \subsubsection f $D_i \in \{0,1\}$ reflects on whether individual $i$ choose to migrate
+        \[
+            D_i = \mathbb{I}\{w_1 > w_0\}
+        \]
+
 
     
     
@@ -195,10 +286,10 @@
     \subsection{Rosenbaum and Rubin}
 
         \[ \begin{aligned}
-            P[D = 1|Y_0, Y_1, P] &= E[P[D = 1|Y_0, Y_1, P, X]|Y_0, Y_1, P] \\
-            &= E[P[D = 1|Y_0, Y_1, X]|Y_0, Y_1, P], \quad (\cdot \text{ CIA}) \\
-            &= E[P[D = 1|X]|Y_0, Y_1, P] \\
-            &= E[P(X)|Y_0, Y_1, P] \\
+            P[D = 1|Y_0, Y_1, P] &= E[P[D = 1|Y_0, Y_1, P, X]|Y_0, Y_1, P]  &\qquad &\\
+            &= E[P[D = 1|Y_0, Y_1, X]|Y_0, Y_1, P], && (P \text{ is a function of } X) \\
+            &= E[P[D = 1|X]|Y_0, Y_1, P] && \text{(CIA)} \\
+            &= E[P(X)|Y_0, Y_1, P] && \text{(Definition)}\\
             &= E[P|Y_0, Y_1, P] \\
             &= P
         \end{aligned} \]
@@ -207,44 +298,69 @@
     % Q3.2
     \subsection{Propensity Score}
 
-        
+        \begin{enumerate}
 
             % Q3.2.1
-            \subsubsection t 
+            \item {\bf Pick you favorite $\beta_1, \beta_2 \neq 0$. Go back to your simulation in the first homework and re-simulate the model.}
             
+                We assume that
+                \[
+                    \begin{pmatrix}
+                        \varepsilon_0 \\
+                        \varepsilon_1
+                      \end{pmatrix}
+                      \sim \mathcal{N}
+                      \left(
+                        \begin{pmatrix}
+                          0 \\
+                          0
+                        \end{pmatrix},
+                        \begin{pmatrix}
+                          1 & 0 \\
+                          0 & 1
+                        \end{pmatrix}
+                      \right)
+                \]
+                and $X_1, X_2$ also follow standard normal distribution independently
+                \begin{lstlisting}[language=R]
+library(tidyverse)
+N <- 1e6
+mu0 <- 0.8
+mu1 <- 1
+b1 <- 1
+b2 <- 2
+e0 <- rnorm(N, 0, 1)
+e1 <- rnorm(N, 0, 1)
+x1 <- rnorm(N, 0, 1)
+x2 <- rnorm(N, 0, 1)
+df_exp1 <- tibble(
+    e0 = e0,
+    e1 = e1,
+    x1 = x1,
+    x2 = x2,
+    w0 = mu0 + b1 * x1 + e0,
+    w1 = mu1 + b1 * x1 + b2 * x2 + e1,
+    d = if_else(w1 > w0, 1, 0),
+    w = d * w1 + (1 - d) * w0
+    )
+                \end{lstlisting}
+
             % Q3.2.2
-            \subsubsection t
+            \item {\bf What is an example of $X_1$? Is $\beta_1$ identified?}
+                
+                $X_1$ can be some observable characteristics of the individual, such as gender, age, education, and so on. For example, if you are a college graduate, you are more likely to have a higher wage no matter you migrate to the host country or not. Note that the relationship between the observed outcome and the potential outcomes is
+
+                \[ \begin{aligned}
+                    w &= w_0 + D(w_1 - w_0) \\
+                      &= \mu_0 + \beta_1 X_1 + \varepsilon_0 + D(\mu_1 - \mu_0 + \beta_2 X_2 + \varepsilon_1 - \varepsilon_0) \\
+                      &= \mu_0 + D(\mu_1 - \mu_0) + \beta_1 X_1 + \{ \varepsilon_0 + D(\beta_2 X_2 + \varepsilon_1 - \varepsilon_0) \},
+                \end{aligned} \]
+
+                where the first term $\mu_0$ is similar to the intercept in the linear regression model, the treatment effect $(\mu_1 - \mu_0)$ is similar to the coeﬀicient of the treatment indicator $D$, $\beta_1$ is similar to the coeﬀicient of the covariate $X_1$, and $\{\varepsilon_0 + D(\beta_2 X_2 + \varepsilon_1 - \varepsilon_0)\}$, which represents the heterogeneity of the baseline untreated outcome and of the causal effect, is similar to the error term in the linear regression model. In general, since $\{\varepsilon_0 + D(\beta_2 X_2 + \varepsilon_1 - \varepsilon_0)\}$ is not necessarily orthogonal to $D$ and $X_1$, a regression of $Y$ on $D$ and $X_1$ may not identify $(\mu_1 - \mu_0)$ and $\mu_1$. The identification of $(\mu_1 - \mu_0)$ and $\mu_1$ depends on the specific data generating process. The standard regression strategy is to include additional variables in a regression model to break the correlation between the error term and the covariates
             
             % Q3.2.3
-            \subsubsection t
+            \item {\bf Define the propensity score using the notation set up here.}
             
-            % Q3.2.4
-            \subsubsection t
-            
-            % Q3.2.5
-            \subsubsection t
-            
-            % Q3.2.6
-            \subsubsection t
-            
-            % Q3.2.7
-            \subsubsection t
-            
-            % Q3.2.8
-            \subsubsection t
-            
-            % Q3.2.9
-            \subsubsection t
-            
-            % Q3.2.10
-            \subsubsection t
-            
-        
+            The propensity score is the selection probability conditional on observables; that is
 
-
-
-
-
-
-
-\end{document}  
+            \
