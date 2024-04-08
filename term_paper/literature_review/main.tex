@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage[
+backend=biber,
+style=alphabetic,
+sorting=ynt
+]{biblatex}
+
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+ 
+\usepackage[acronym]{glossaries}
+\usepackage{indentfirst}
+\usepackage{biblatex}
+
+\addbibresource{mybibliography.bib}
+
+
+\makeglossaries
+
+\newglossaryentry{entryOne}
+{
+        name=Glossary Entry,
+        description={Glossary entries are used to provide definitions for words in your document}
+}    
+
+
+\title{Literature Review}
+\author{Xiang Jyun, Jhang}
+\date{April 9, 2024}
+
+
+
+
+\begin{document}
+
+\maketitle
+
+\section{Main Content}
+
+    During Pandemic period, most countries were in severe economic depress. Leading by the substantial amount of layoffs, the labor market shows a red sign of tightness follwed by a deep drop in wage for workers.
+
+    In post-pandemic era, the recovery of workers' wage has different trend. Compared with the high-skilled worker, the low-skilled worker obtain more increment in wage, leading to the wage compression.
+
+    I'm going to explore the wage compression trend in Taiwan, digging out the heterogeneity effect of pandemic on workers' wage.  
+    
+
+    1. Covid hurts labor market by decreasing labor demand, further reducing the wage
+    2. However, in post-Covid era, low-skilled worker actually recover their wag back more than high-skilled worker, leading to a phenomenon called wage compression
+    3. Is wage compression prevailing in Taiwan as well? That is, do low-skilled workers' wage increase more than high-skilled worker?
+
+
+    
+\medskip
+
+
+
+\printbibliography
+
+\end{document}
