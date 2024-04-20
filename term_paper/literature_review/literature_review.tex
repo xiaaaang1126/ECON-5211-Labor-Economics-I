@@ -1,0 +1,78 @@
+\documentclass[11pt]{article}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%\pdfminorversion=4
+	% NOTE: To produce blinded version, replace "0" with "1" below.
+	\newcommand{\blind}{0}
+	
+	%%%%%%% IISE Transactions margin specifications %%%%%%%%%%%%%%%%%%%
+	% DON'T change margins - should be 1 inch all around.
+	\addtolength{\oddsidemargin}{-.5in}%
+	\addtolength{\evensidemargin}{-.5in}%
+	\addtolength{\textwidth}{1in}%
+	\addtolength{\textheight}{1.3in}%
+	\addtolength{\topmargin}{-.8in}%
+    \makeatletter
+    \renewcommand\section{\@startsection {section}{1}{\z@}%
+                                       {-3.5ex \@plus -1ex \@minus -.2ex}%
+                                       {2.3ex \@plus.2ex}%
+                                       {\normalfont\fontfamily{phv}\fontsize{16}{19}\bfseries}}
+    \renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+                                         {-3.25ex\@plus -1ex \@minus -.2ex}%
+                                         {1.5ex \@plus .2ex}%
+                                         {\normalfont\fontfamily{phv}\fontsize{14}{17}\bfseries}}
+    \renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+                                        {-3.25ex\@plus -1ex \@minus -.2ex}%
+                                         {1.5ex \@plus .2ex}%
+                                         {\normalfont\normalsize\fontfamily{phv}\fontsize{14}{17}\selectfont}}
+    \renewcommand{\baselinestretch}{1.5}   
+    \makeatother
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	%%%%% IISE Transactions package list %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\usepackage{amsmath}
+	\usepackage{graphicx}
+	\usepackage{enumerate}
+	\usepackage{xcolor}
+	\usepackage{natbib} %comment out if you do not have the package
+	\usepackage{url} % not crucial - just used below for the URL
+    \usepackage{setspace}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	%%%%% Author package list and commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%% Here are some examples %%%%%%%%%%%%%%
+	%	\usepackage{amsfonts, amsthm, latexsym, amssymb}
+	%	\usepackage{lineno}
+	%	\newcommand{\mb}{\mathbf}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    %%%%% Author and date
+    \title{Literature Review}
+    \author{Xiang Jyun, Jhang}
+    \date{April 9, 2024}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\begin{document}
+		
+    \maketitle
+
+    \section{Literature Review} \label{s:sec2}
+
+        The significance of the employment-to-employment (EE) transition rate has been overlooked in the formulation of policies for an extended period. However, recent empirical studies have highlighted its connection with the rate of wage increase (\cite{moscarini2016wage}, \cite{hahnJobtoJobFlowsEarnings2017}). Utilizing data from the United States, \cite{karahanJobtoJobTransitionsDrive2017} demonstrated that the EE transition rate, a reflection of labor market dynamics, is a more potent predictor of wage growth than the job finding rate among the unemployed. Additionally, \cite{hahnJobtoJobFlowsEarnings2017} found that the EE transition rate has a modestly positive effect on earnings. The EE transition rate is undeniably a significant factor in wage growth that merits further attention.
+
+        During the Covid-19 pandemic, the labor markets in various countries underwent severe economic downturns, leading to significant layoffs in the US market, as evidenced by both survey (\cite{coibion2020labor}, \cite{cortes2023heterogeneous}) and administrative data (\cite{albanesi2021effects}). This downturn was not unique to the US; labor markets in other developed countries also experienced significant disruptions (\cite{fana2020employment}, \cite{kikuchi2021suffers}). This widespread phenomenon of layoffs reduced wages across numerous countries, prompting a widespread eagerness among workers to secure employment.
+
+        In the aftermath of the pandemic, the resurgence of job searching and EE transition rates, in tandem with economic recuperation, injected vitality into the labor market and contributed to wage increases. Notably, the wage recovery trajectory exhibited surprising variances across different worker segments. \cite{autorUnexpectedCompressionCompetition2023} revealed that in the US, low-skilled or less-educated workers experienced a more rapid wage recovery than their high-skilled or well-educated counterparts during the economic revival, resulting in a hastened process of wage compression.
+
+        The objective of my research is to ascertain whether the EE transition rate acts as a primary catalyst for wage enhancement in Taiwan by analyzing labor insurance administrative data. Furthermore, this study aims to investigate whether the presence of an expedited wage compression trend exists across various industries in Taiwan following the pandemic.
+
+
+
+
+\bibliographystyle{chicago}
+\bibliography{mybibliography.bib}
+
+
+
+	
+\end{document}
