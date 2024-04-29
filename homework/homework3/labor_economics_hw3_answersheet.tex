@@ -1,0 +1,215 @@
+\documentclass[11pt]{article}
+
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{fancyvrb}
+\usepackage{fancyhdr}
+\usepackage{mdframed} % for problem and answer environments
+
+% useful package
+\usepackage[obeyspaces]{url}
+\usepackage{listings}  % coding blocks
+\usepackage[svgnames]{xcolor}
+\graphicspath{ {./pic/} }
+
+% codign block setting
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor = \color{backcolour},   
+    commentstyle = \color{codegray},
+    keywordstyle = \color{blue},
+    numberstyle = \tiny\color{codegray},
+    stringstyle = \color{codegreen},
+    basicstyle = \ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,    captionpos=b,                    
+    keepspaces=true, numbers=left,
+    numbersep=10pt, showspaces=false,                
+    showstringspaces = true, showtabs = true, tabsize = 2}
+\lstset{style=mystyle}
+
+\newenvironment{solution}{%
+  \renewcommand\qedsymbol{$\blacksquare$}%
+  \begin{mdframed}[backgroundcolor=gray!15]%
+  \begin{proof}[Solution]}%
+  {\end{proof}%
+  \end{mdframed}}%
+
+
+
+\parindent0in
+\pagestyle{plain}
+\thispagestyle{plain}
+
+
+%% UPDATE MACRO DEFINITIONS %%
+\newcommand{\myname}{Xiang Jyun, Jhang}
+\newcommand{\assignment}{Homework 3}
+\newcommand{\duedate}{March 31, 2024}
+
+%% mathematical notation
+\newcommand{\ept}{\mathbb{E}}
+\newcommand{\pr}{\mathbb{P}}
+\newcommand{\normal}{\mathcal{N}}
+\newcommand{\var}{\text{Var}}
+\newcommand{\cov}{\text{Cov}}
+\newcommand{\given}{\,|\,}
+
+
+\begin{document}
+
+
+\textbf{National Taiwan University}\hfill\textbf{\myname}\\[0.01in]
+\textbf{ECON 5211 Labor Economics I}\hfill\textbf{\assignment}\\[0.01in]
+\textbf{Prof.\ Kuan Ming, Chen}\hfill\textbf{\duedate}\\
+\smallskip\hrule\bigskip
+
+
+% question 1
+\section{Normalization of the Selection Equation}
+
+    In class, we said that 
+    \[
+        \text{ATT} = \int_{0}^{1} \text{MTE}(u) \frac{\pr(p(Z)\geq u)}{\pr(D=1)}du 
+    \] 
+    This result relies on the following normalization.
+    \[ 
+        D = 1\{U \leq v(Z)\} = 1\{\tilde{U} \leq p(Z)\} 
+    \]
+    where $p$ is the propensity score.
+    \begin{enumerate}
+        \item We write \( D = 1\{F_U(U) \leq F_U(v(Z))\} \), where \( F_U \) is the CDF of the continuously distributed \( U \). What is the distribution of \( F_U(U) \)? Let \( \tilde{U} := F_U(U) \) from now on.
+        \item Define \( p(z) := P(D = 1|Z = z) \), show that \( p(z) = F_U(v(z)) \).
+        \item Show that \( D = 1\{\tilde{U} \leq p(Z)\} \).
+    \end{enumerate}
+
+
+% question 2
+\section{Derivation of the Weights for LATE}
+
+    In this exercise, we try to show that LATE of instrument \( z \) and \( z' \) can be written as:
+    \[ \text{LATE}_{z'}^{z} = \frac{E[Y|Z=z] - E[Y|Z=z']}{E[D|Z=z] - E[D|Z=z']} = \int_{0}^{1} \text{MTE}(u) \times \frac{1\{u \in [p(z'),p(z)]\}}{p(z) - p(z')} du \]
+
+    \begin{enumerate}
+        \item Which part of the most right-hand side is \( E[D|Z=z] - E[D|Z=z'] \) corresponding to?
+        \item Show that \( E[Y|Z=z] = E[Y_1|U \leq p(z)]p(z) + E[Y_0|U > p(z)](1 - p(z)) \)
+        \item Show that \( E[Y|Z=z] = \int_{0}^{p(z)} E[Y_1|U = u] du + \int_{p(z)}^{1} E[Y_0|U = u] du \)
+        \item Show that \( E[Y|Z=z] - E[Y|Z=z'] = \int_{p(z')}^{p(z)} \text{MTE}(u) du \)
+    \end{enumerate}
+
+    
+    
+% question 3
+\section{Policy Relevance Treatment Effect}
+
+    We introduced LATE in class, but the ``ideal'' treatment effect depends on the research question. Let's take attending college for example.
+
+    \begin{enumerate}
+
+        % Q3-1
+        \item Let $D \in \{0,1\}$ be attending college or not and let the outcome $Y$ being the future average earning. What is the ATE measuring?
+        
+            \begin{solution}
+                The ATE measures the average effect of attending college on the sample, where the effect on each individual is:
+                \[
+                    \ept[Y_{i1} - Y_{i0}]
+                \]
+                in words, ATE captures the effect of attending college on future average earnings.
+            \end{solution}
+        
+        % Q3-2
+        \item What is the ATT measuring?
+        
+            \begin{solution}
+                For those choosing to attend the college, the average effect is summarized as ATT, that is:
+                \[
+                    \ept[Y_{i1} - Y_{i0} \given D_i = 1]
+                \]
+                in words, ATE captures the effect of attending college on future average earnings only for those attended college.
+            \end{solution}
+        
+        % Q3-3
+        \item Let $Z$ be the tuition, $Z^*$ be the tuition under the new policy, $p^*$ be the propensity score under new policy, and $D^* = 1\{U \leq p^*(Z^*)\}$. Therefore $Y^* = D^*Y_1 + (1-D^*)Y_0$. Define
+        \[\beta_{\text{PRTE}} = \frac{E(Y^*)-E(Y)}{E(D^*)-E(D)}.\]
+        Write down an argument why $\beta_{\text{PRTE}}$ is more interesting than ATE or ATT.
+
+            \begin{solution}
+                Compared with ATE and ATT, where the former one measures the effect on all sample while the latter focuses on the effect in treatment group, $\beta_{PRTE}$ concerns more on those affected by the policy changes, which sheds the light for the policymakers since it reflects on the welfare changes resulting from the policy changes.
+            \end{solution}
+        
+        % Q3-4
+        \item When will $\beta_{\text{PRTE}}$ equal to LATE?
+        
+            \begin{solution}
+                If we assume those changes their treatment status (in this case, change their mind and attend the college) are all compliers, then $\beta_{PRTE}$ reflects on the LATE on those people.
+            \end{solution}
+
+    \end{enumerate}
+
+        
+% question 4
+\section{Arellano-Bond Estimator}
+
+    Consider the following model
+    \[ 
+        Y_{it} = \rho Y_{it-1} + \delta_i + \varepsilon_{it} 
+    \]
+    Assume \( \text{Cov}(\varepsilon_{it}, Y_{is}) = 0 \) for \( 0 \leq s < t-1 \) (sequential exogeneity).
+
+    \begin{enumerate}
+
+        % Q4-1
+        \item Show that the fixed effect estimator cannot recover \( \rho \) consistently.
+        
+            \begin{solution}
+                In the given model, adding individual fixed effect $\delta_i$ couldn't remedy the endogeneity problem, which arise from the correlation between $Y_{it-1}$ and $\delta_i$; as a consequence, $\rho$ can not be estimated consistently.
+            \end{solution}
+            
+        
+        % Q4-2
+        \item Take the first difference to difference out the individual fixed effect.
+        
+            \begin{solution}
+                After taking first difference, we can obtain
+                \[
+                    \underbrace{Y_{it} - Y_{it-1}}_{\Delta Y_{it}} = \rho(\underbrace{Y_{it-1} - Y_{it-2}}_{\Delta Y_{it-1}}) + \underbrace{\varepsilon_{it} - \varepsilon_{it-1}}_{\Delta \varepsilon_{it}}
+                \]
+            \end{solution}
+        
+        % Q4-3
+        \item With the first difference, can OLS recover \( \rho \)? If not, can you propose an instrument?
+            
+            \begin{solution}
+                Although we did first difference, OLS might still not estimate $\rho$ consistently due to the correlation between $\Delta Y_{it-1}$ and $\Delta \varepsilon_{it}$, that is, $\cov(Y_{it-1}, \varepsilon_{it-1}) \neq 0$
+
+                To solve the problem, we can utilize Arellano-Bond estimator, which use $Y_{it-2}$ as the instrumental variable for $Y_{it-1}$. Recall the sequential exogeneity assumption, 
+                \begin{enumerate}
+                    \item {\it Relevance:} $\cov(\Delta Y_{it-1}, Y_{it-2}) \neq 0$, which is obvious.
+                    \item {\it Exogeneity:} $Y_{it-2} \perp \Delta\varepsilon_{it}$ since $Y_{it-2} \perp \{\varepsilon_{it-1},\varepsilon_{it-2}\}$
+                \end{enumerate}
+                hence, by two-stage GMM, we can estimate $\rho$.
+            \end{solution}
+
+    \end{enumerate}
+
+
+% question 5
+\section{Show that TWFE is Biased}
+
+    \begin{enumerate}
+        \item Draw the figures in class to explain why TWFE cannot recover a positively weighted average of cohort specific ATT.
+        \item Simulate a data to illustrate your point above.
+        \item Look up the paper ``What's Trending in Difference-in-Differences? A Synthesis of the Recent Econometrics Literature.'' Learn to use one of the packages listed in the paper's appendix. Show that you can recover one of the treatment effect from your simulation.
+    \end{enumerate}
+
+
+
+
+\end{document}  
