@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.7.21)  7 MAY 2024 13:00
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.7.21)  7 MAY 2024 14:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -337,8 +337,7 @@ Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/xcolor/svgnam.def
 File: svgnam.def 2022/06/12 v2.14 Predefined colors according to SVG 1.1 (UK)
-))
-No file labor_economics_hw3_answersheet.aux.
+)) (./labor_economics_hw3_answersheet.aux)
 \openout1 = `labor_economics_hw3_answersheet.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
@@ -351,7 +350,7 @@ LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
 LaTeX Font Info:    ... okay on input line 67.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 67.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 67.
-(/usr/local/texlive/2023/texmf-dist/tex/latex/base/ts1cmr.fd
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 67.
@@ -838,14 +837,40 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 259.
- [4] [5] (./labor_economics_hw3_answersheet.aux) ) 
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 278.
+File: ./pic//Q5a_TWFE.png Graphic file (type bmp)
+<./pic//Q5a_TWFE.png>
+ [4]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 286.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/listings/lstlang2.sty
+File: lstlang2.sty 2023/02/27 1.9 listings language file
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/listings/lstlang3.sty
+File: lstlang3.sty 2023/02/27 1.9 listings language file
+)
+File: ./pic//Q5b_TWFE.png Graphic file (type bmp)
+<./pic//Q5b_TWFE.png>
+File: ./pic//Q5b_TWFE_2.png Graphic file (type bmp)
+<./pic//Q5b_TWFE_2.png>
+ [5] [6] [7] [8]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 458.
+File: ./pic//Q5c_TWFE.png Graphic file (type bmp)
+<./pic//Q5c_TWFE.png>
+ [9] [10] [11] (./labor_economics_hw3_answersheet.aux) ) 
 Here is how much of TeX's memory you used:
- 6742 strings out of 476683
- 110898 string characters out of 5804047
- 1860018 words of memory out of 5000000
- 26876 multiletter control sequences out of 15000+600000
- 516991 words of font info for 57 fonts, out of 8000000 for 9000
+ 7709 strings out of 476683
+ 122241 string characters out of 5804047
+ 3397018 words of memory out of 5000000
+ 27816 multiletter control sequences out of 15000+600000
+ 517182 words of font info for 61 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 82i,10n,90p,600b,438s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 82i,10n,90p,600b,2062s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on labor_economics_hw3_answersheet.pdf (5 pages).
+Output written on labor_economics_hw3_answersheet.pdf (11 pages).
