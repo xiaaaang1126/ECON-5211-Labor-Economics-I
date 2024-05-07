@@ -1,0 +1,95 @@
+---
+title: "Labor Economics I Homework 3: Is TWFE work?"
+format: html
+editor: visual
+author: Xiang Jyun, Jhang
+date: 04-30-2024
+---
+
+## TWFE model
+
+```{R}
+# Load required libraries
+library(tidyverse)
+```
+
+## Simulation
+
+First, we generate the simulated data point (1000 individuals ⨉ 5 periods)
+
+```{R}
+# Set the seed for reproducibility
+set.seed(123)
+
+# Define the number of individuals and periods
+n_individuals <- 3
+time_periods <- 0:3
+
+# Create a data frame with all combinations of individuals and time periods
+data <- expand.grid(id = 1:n_individuals, time = time_periods) %>%
+  arrange(id, time)
+```
+
+next, we randomly assign the treatment group and outcome variable
+
+```{R}
+
+# Set the seed for reproducibility
+set.seed(123)
+
+# Define the number of individuals and periods
+n_individuals <- 3
+time_periods <- 0:3
+
+# Create a data frame with all combinations of individuals and time periods
+data <- expand.grid(id = 1:n_individuals, time = time_periods) %>%
+  arrange(id, time)
+
+
+# Assign treatment based on time period and cohort
+# Treatment starts after time period 2 for cohorts 0 and 1
+data$early_treated <- as.integer(data$id == 1 & (data$time == 1 | data$time == 2))
+data$late_treated <- as.integer(data$id == 2 & (data$time == 2))
+data$treatment <- (data$early_treated == 1 | data$late_treated == 1)
+
+# Generate the outcome variable with a time effect, a cohort effect, and a treatment effect
+alpha <- 5
+beta <- 1
+time_effect <- data$time
+cohort_effect <- data$id
+
+# Assign an indicator for the first period after treatment
+# data$first_treatment_period <- as.integer(data$time == 1 & data$id == 2)
+# data$second_treatment_period <- as.integer(data$time == 2 & data$id == 3)
+
+# Simulate the outcome variable Y with an added random error
+data$Y <- alpha + time_effect + cohort_effect + beta * data$treatment + rnorm(nrow(data))
+
+# Adjust the outcome for the first period after treatment by multiplying by 1000
+data$Y <- data$Y + (1.2 * beta * data$early_treated)
+data$Y <- data$Y + (1.1 * beta * data$late_treated)
+
+data <- data[order(data$id, data$time),]
+
+
+
+# Fit a TWFE model without considering different treatment effects across cohorts
+twfe_model <- lm(Y ~ factor(time) + factor(id) + treatment, data = data)
+
+# Print the summary of the TWFE model
+summary(twfe_model)
+
+```
+
+## Estimation
+
+Finally, we utilize the TWFE model to estimate
+
+```{R}
+# Fit a TWFE model without considering different treatment effects across cohorts
+twfe_model <- lm(Y ~ factor(time) + factor(id) + treatment, data = data)
+
+# Print the summary of the TWFE model
+summary(twfe_model)
+```
+Although the outcome value in treatment group in post-treatment period 1 and 2 are positive comapred with pre-treatment period, the TWFE estimation turns out to be negative.

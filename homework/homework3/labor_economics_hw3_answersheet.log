@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.7.21)  29 APR 2024 11:46
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.7.21)  30 APR 2024 13:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -337,82 +337,515 @@ Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/xcolor/svgnam.def
 File: svgnam.def 2022/06/12 v2.14 Predefined colors according to SVG 1.1 (UK)
-)) (./labor_economics_hw3_answersheet.aux)
+))
+No file labor_economics_hw3_answersheet.aux.
 \openout1 = `labor_economics_hw3_answersheet.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 66.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 66.
- (/usr/local/texlive/2023/texmf-dist/tex/latex/base/ts1cmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 67.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 67.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
 \c@lstlisting=\count290
-LaTeX Font Info:    Trying to load font information for U+msa on input line 79.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 80.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 79.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 80.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 92.
+(mdframed)              on input line 93.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 99.
+(mdframed)              on input line 100.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 106.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 138.
+(mdframed)              on input line 112.
  [1
 
 ]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 149.
+(mdframed)              on input line 134.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 162.
+(mdframed)              on input line 141.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 169.
+(mdframed)              on input line 154.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 166.
+
+Overfull \vbox (34.54834pt too high) detected at line 175
+ []
+
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 175.
+
+Overfull \vbox (35.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (36.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (37.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (38.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (39.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (40.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (41.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (42.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (43.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (44.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (45.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (46.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (47.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (48.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (49.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (50.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (51.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (52.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (53.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (54.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (55.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (56.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (57.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (58.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (59.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (60.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (61.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (62.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (63.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (64.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (65.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (66.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (67.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (68.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (69.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (70.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (71.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (72.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (73.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (74.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (75.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (76.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (77.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (78.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (79.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (80.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (81.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (82.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (83.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (84.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (85.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (86.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (87.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (88.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (89.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (90.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (91.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (92.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (93.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (94.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (95.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (96.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (97.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (98.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (99.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (100.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (101.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (102.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (103.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (104.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (105.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (106.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (107.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (108.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (109.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (110.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (111.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (112.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (113.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (114.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (115.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (116.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (117.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (118.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (119.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (120.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (121.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (122.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (123.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (124.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (125.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (126.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (127.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (128.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (129.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (130.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (131.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (132.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (133.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (134.54834pt too high) detected at line 175
+ []
+
+
+Overfull \vbox (135.54834pt too high) detected at line 175
+ []
+
+
+Package mdframed Warning: correct box splittet fails
+ It seems you are using a non splittable contents
+(mdframed)                 on input line 175.
+
+Package mdframed Info: You first box width is to small
+ mdframed fixed it
+(mdframed)              on input line 175.
+[2]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 190.
-Package mdframed Info: Not enough space on this page on input line 192.
- [2]
-Package mdframed Info: Not enough space on this page on input line 192.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 198.
+(mdframed)              on input line 201.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 208.
- [3] (./labor_economics_hw3_answersheet.aux) ) 
+(mdframed)              on input line 214.
+Package mdframed Info: Not enough space on this page on input line 216.
+ [3]
+Package mdframed Info: Not enough space on this page on input line 216.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 221.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 241.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 249.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 259.
+ [4] [5] (./labor_economics_hw3_answersheet.aux) ) 
 Here is how much of TeX's memory you used:
- 6743 strings out of 476683
- 110965 string characters out of 5804047
- 1858018 words of memory out of 5000000
- 26875 multiletter control sequences out of 15000+600000
+ 6742 strings out of 476683
+ 110898 string characters out of 5804047
+ 1860018 words of memory out of 5000000
+ 26876 multiletter control sequences out of 15000+600000
  516991 words of font info for 57 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 82i,9n,90p,600b,409s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 82i,10n,90p,600b,438s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on labor_economics_hw3_answersheet.pdf (3 pages).
+Output written on labor_economics_hw3_answersheet.pdf (5 pages).
